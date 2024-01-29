@@ -209,6 +209,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 6585978736284051182, guid: cbcedb6e2b1b36342832adb83caf4254, type: 3}
+    - target: {fileID: 8444038016217604212, guid: 60249afc645a64849bfb1f027d586afc, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -228,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3768811230921415713, guid: 91e2ce37cdfe1ff438f21f5f4e385c82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.7
+      value: 8.35
       objectReference: {fileID: 0}
     - target: {fileID: 3768811230921415713, guid: 91e2ce37cdfe1ff438f21f5f4e385c82, type: 3}
       propertyPath: m_LocalPosition.y
@@ -270,6 +274,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 5248616785637445648, guid: 3057f5b5b5e571143adbc3d46ec7d29a, type: 3}
+    - target: {fileID: 5664730266107185102, guid: 91e2ce37cdfe1ff438f21f5f4e385c82, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -770,6 +778,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 6585978736284051182, guid: cbcedb6e2b1b36342832adb83caf4254, type: 3}
+    - target: {fileID: 8444038016217604212, guid: 60249afc645a64849bfb1f027d586afc, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -842,6 +854,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 6585978736284051182, guid: cbcedb6e2b1b36342832adb83caf4254, type: 3}
+    - target: {fileID: 8444038016217604212, guid: 60249afc645a64849bfb1f027d586afc, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -960,6 +976,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 4231632984978516608, guid: 751f596ce0c5f104fb762e4586dd3784, type: 3}
+    - target: {fileID: 2032624763530199367, guid: d38d3f41df38b544daa9a07584a90b05, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3661380985409482898, guid: d38d3f41df38b544daa9a07584a90b05, type: 3}
       propertyPath: m_Name
       value: HealSpawnPoint (2)
@@ -1130,6 +1150,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 5248616785637445648, guid: 3057f5b5b5e571143adbc3d46ec7d29a, type: 3}
+    - target: {fileID: 5664730266107185102, guid: 91e2ce37cdfe1ff438f21f5f4e385c82, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5908,7 +5932,7 @@ Transform:
   m_GameObject: {fileID: 1328903858}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4200001, y: -0.41999996, z: -7.42}
+  m_LocalPosition: {x: -5.14, y: 0.83, z: -7.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6237,6 +6261,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 4231632984978516608, guid: 751f596ce0c5f104fb762e4586dd3784, type: 3}
+    - target: {fileID: 2032624763530199367, guid: d38d3f41df38b544daa9a07584a90b05, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3661380985409482898, guid: d38d3f41df38b544daa9a07584a90b05, type: 3}
       propertyPath: m_Name
       value: HealSpawnPoint (4)
@@ -6549,6 +6577,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 6585978736284051182, guid: cbcedb6e2b1b36342832adb83caf4254, type: 3}
+    - target: {fileID: 8444038016217604212, guid: 60249afc645a64849bfb1f027d586afc, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6566,6 +6598,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 4231632984978516608, guid: 751f596ce0c5f104fb762e4586dd3784, type: 3}
+    - target: {fileID: 2032624763530199367, guid: d38d3f41df38b544daa9a07584a90b05, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3661380985409482898, guid: d38d3f41df38b544daa9a07584a90b05, type: 3}
       propertyPath: m_Name
       value: HealSpawnPoint (1)
@@ -6947,6 +6983,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 4231632984978516608, guid: 751f596ce0c5f104fb762e4586dd3784, type: 3}
+    - target: {fileID: 2032624763530199367, guid: d38d3f41df38b544daa9a07584a90b05, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3661380985409482898, guid: d38d3f41df38b544daa9a07584a90b05, type: 3}
       propertyPath: m_Name
       value: HealSpawnPoint (3)
@@ -7136,6 +7176,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 6585978736284051182, guid: cbcedb6e2b1b36342832adb83caf4254, type: 3}
+    - target: {fileID: 8444038016217604212, guid: 60249afc645a64849bfb1f027d586afc, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7271,6 +7315,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 6585978736284051182, guid: cbcedb6e2b1b36342832adb83caf4254, type: 3}
+    - target: {fileID: 8444038016217604212, guid: 60249afc645a64849bfb1f027d586afc, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -7347,6 +7395,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 5248616785637445648, guid: 3057f5b5b5e571143adbc3d46ec7d29a, type: 3}
+    - target: {fileID: 5664730266107185102, guid: 91e2ce37cdfe1ff438f21f5f4e385c82, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -7454,6 +7506,10 @@ PrefabInstance:
       propertyPath: _creature
       value: 
       objectReference: {fileID: 4231632984978516608, guid: 751f596ce0c5f104fb762e4586dd3784, type: 3}
+    - target: {fileID: 2032624763530199367, guid: d38d3f41df38b544daa9a07584a90b05, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3661380985409482898, guid: d38d3f41df38b544daa9a07584a90b05, type: 3}
       propertyPath: m_Name
       value: HealSpawnPoint
@@ -7529,7 +7585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6292958274148988720, guid: 05657643ee5953341905760fd2a5c258, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.09
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 6292958274148988720, guid: 05657643ee5953341905760fd2a5c258, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7563,6 +7619,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6821911761701787930, guid: 05657643ee5953341905760fd2a5c258, type: 3}
+      propertyPath: _chanceToSpawn
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8096200790470832799, guid: 05657643ee5953341905760fd2a5c258, type: 3}
       propertyPath: m_Name
       value: PlayerSpawnPoint
@@ -7584,5 +7644,5 @@ SceneRoots:
   - {fileID: 4631252091539334260}
   - {fileID: 6273641965386361702}
   - {fileID: 2310409263254363860}
-  - {fileID: 1328903862}
   - {fileID: 6760674737156657580}
+  - {fileID: 1328903862}

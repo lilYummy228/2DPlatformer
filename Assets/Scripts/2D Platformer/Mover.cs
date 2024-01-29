@@ -1,10 +1,16 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Mover : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
 
     private Rigidbody2D _rigidbody;
+
+    private void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
 
     public float Move(float moveDirection)
     {
@@ -19,11 +25,6 @@ public class Mover : MonoBehaviour
         }
 
         return moveDirection;
-    }
-
-    private void Start()
-    {
-        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void FlipToSight(float moveDirection)

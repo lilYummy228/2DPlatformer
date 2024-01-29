@@ -268,7 +268,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blinkMaterial: {fileID: 2100000, guid: d960070712cfc5b409dcf502f8402916, type: 2}
-  _spawnPoint: {fileID: 6821911761701787930, guid: 05657643ee5953341905760fd2a5c258, type: 3}
 --- !u!114 &6503778217708268593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackPoint: {fileID: 6369578114056373497}
   _attackRange: 1.24
-  _enemies:
+  _enemyLayer:
     serializedVersion: 2
     m_Bits: 64
 --- !u!114 &8370900851195665244

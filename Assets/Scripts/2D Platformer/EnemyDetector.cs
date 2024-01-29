@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class PlayerDetector : MonoBehaviour
+public class EnemyDetector : MonoBehaviour
 {
-    private const string _playerTag = "Player";
+    private const string PlayerTag = "Player";
 
     [SerializeField] BoxCollider2D _detectionZone;
 
@@ -10,7 +10,7 @@ public class PlayerDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(_playerTag) && gameObject.TryGetComponent(out Enemy enemy))
+        if (collision.CompareTag(PlayerTag) && gameObject.TryGetComponent(out Enemy enemy))
         {
             Player = collision.gameObject.transform;
             StartCoroutine(enemy.DetectPlayer());
@@ -19,7 +19,7 @@ public class PlayerDetector : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag(_playerTag))
+        if (collision.CompareTag(PlayerTag))
             Player = null;
     }
 }

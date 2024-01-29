@@ -1,6 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Mover))]
+[RequireComponent(typeof(AnimationController))]
+[RequireComponent(typeof(DamageController))]
+[RequireComponent(typeof(EnemyDetector))]
 public class Enemy : MonoBehaviour
 {
     private readonly int VelocityX = Animator.StringToHash(nameof(VelocityX));
@@ -8,19 +12,45 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private int _health = 3;
 
-    private PlayerDetector _playerDetector;
+    private EnemyDetector _playerDetector;
     private WaitForSeconds _wait;
     private WaitForSecondsRealtime _stun;
     private Mover _mover;
     private AnimationController _animationController;
-    private DamageManagement _damageManagement;
+    private DamageController _damageManagement;
+    private Coroutine _hitCoroutine;
     private float _moveDirection = 1f;
     private float _waitingTime = 2f;
-    private float _stunningTime = 0.5f;
+    private float _stunningTime = 0.4f;
 
-    public void ReachWaypoint()
+    private void Start()
     {
-        StartCoroutine(nameof(ChangeMoveDirection));
+        _wait = new WaitForSeconds(_waitingTime);
+        _stun = new WaitForSecondsRealtime(_stunningTime);
+        _mover = GetComponent<Mover>();
+        _animationController = GetComponent<AnimationController>();
+        _damageManagement = GetComponent<DamageController>();
+        _playerDetector = GetComponent<EnemyDetector>();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.TryGetComponent(out Player player))
+            _hitCoroutine = StartCoroutine(Hit(player));
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.TryGetComponent(out Player player) && _hitCoroutine != null)
+        {
+            StopCoroutine(_hitCoroutine);
+            _animationController.SetAttackState(IsAttack, false);
+        }
+    }
+
+    private void Update()
+    {
+        _animationController.SetVelocityX(VelocityX, _mover.Move(_moveDirection));
     }
 
     public void TakeHit()
@@ -30,9 +60,9 @@ public class Enemy : MonoBehaviour
         StartCoroutine(nameof(Stun));
     }
 
-    public void Hit(bool isAttack)
+    public void ReachWaypoint()
     {
-        _animationController.SetAttackState(IsAttack, isAttack);
+        StartCoroutine(nameof(ChangeMoveDirection));
     }
 
     public IEnumerator DetectPlayer()
@@ -48,6 +78,25 @@ public class Enemy : MonoBehaviour
         }
 
         yield return null;
+    }
+
+    private IEnumerator Hit(Player player)
+    {
+        while (player.Health > 0)
+        {
+            _animationController.SetAttackState(IsAttack, true);
+
+            player.TakeHit();
+
+            yield return _stun;
+
+            _animationController.SetAttackState(IsAttack, false);
+
+            yield return _stun;
+        }
+
+        if (_hitCoroutine != null)
+            StopCoroutine(_hitCoroutine);
     }
 
     private IEnumerator Stun()
@@ -71,20 +120,5 @@ public class Enemy : MonoBehaviour
         yield return _wait;
 
         _moveDirection = -moveDirection;
-    }
-
-    private void Start()
-    {
-        _wait = new WaitForSeconds(_waitingTime);
-        _stun = new WaitForSecondsRealtime(_stunningTime);
-        _mover = GetComponent<Mover>();
-        _animationController = GetComponent<AnimationController>();
-        _damageManagement = GetComponent<DamageManagement>();
-        _playerDetector = GetComponent<PlayerDetector>();
-    }
-
-    private void Update()
-    {
-        _animationController.SetVelocityX(VelocityX, _mover.Move(_moveDirection));
-    }
+    }    
 }

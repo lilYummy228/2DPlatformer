@@ -10,11 +10,6 @@ public class ScoreCounter : MonoBehaviour
     public void AddScore()
     {
         _scoreCount++;
-    }
-       
-    private void Update()
-    {
         _scoreCounter.text = _scoreCount.ToString();
     }
-
 }

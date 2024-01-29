@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Jumper : MonoBehaviour
 {
     [SerializeField] private LayerMask _ground;
@@ -9,6 +10,11 @@ public class Jumper : MonoBehaviour
     public Rigidbody2D Rigidbody { get; private set; }
 
     private float _checkRadius = 0.5f;
+
+    private void Start()
+    {
+        Rigidbody = GetComponent<Rigidbody2D>();
+    }
 
     public bool Jump(bool isJump)
     {
@@ -22,10 +28,5 @@ public class Jumper : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(_groundChecker.position, _checkRadius, _ground);
-    }
-
-    private void Start()
-    {
-        Rigidbody = GetComponent<Rigidbody2D>();
     }
 }

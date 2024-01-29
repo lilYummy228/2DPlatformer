@@ -8,7 +8,8 @@ public class DangerZone : MonoBehaviour
     {
         if (collision.TryGetComponent(out Player player))
         {
-            _spawnPoint.Teleport(collision.gameObject);
+            _spawnPoint.SetPosition(collision.gameObject);
+            player.TakeHit();
         }
     }
 }

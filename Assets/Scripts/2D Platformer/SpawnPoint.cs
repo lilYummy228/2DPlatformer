@@ -3,34 +3,28 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     [SerializeField] private Transform _object;
+    [SerializeField, Range(0, 100)] private int _chanceToSpawn = 100;
 
     private Vector2 _position;
     private Quaternion _rotation;
-
-    public void Teleport(GameObject creature)
-    {
-        creature.transform.position = _position;
-    }
-
-    public void Spawn()
-    {
-        if (_object != null)
-            Instantiate(_object, _position, _rotation);
-    }
-
-    public void SpawnRandomly()
-    {
-        if (Random.Range(0, 2) == 1)
-            Spawn();
-    }
+    private int _randomValue;
 
     private void Start()
     {
         _position = transform.position;
+        _randomValue = Random.Range(0, 100);
 
-        if (_object.TryGetComponent(out Heart heart))
-            SpawnRandomly();
-        else
-            Spawn();
+        TrySpawn();
+    }
+
+    public void SetPosition(GameObject creature)
+    {
+        creature.transform.position = _position;
+    }
+
+    public void TrySpawn()
+    {
+        if (_object != null && _randomValue < _chanceToSpawn)
+            Instantiate(_object, _position, _rotation);
     }
 }
