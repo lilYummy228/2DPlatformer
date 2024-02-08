@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class Mover : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
@@ -9,7 +8,8 @@ public class Mover : MonoBehaviour
 
     private void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        if (gameObject.TryGetComponent(out Rigidbody2D rigidbody))
+            _rigidbody = rigidbody;
     }
 
     public float Move(float moveDirection)

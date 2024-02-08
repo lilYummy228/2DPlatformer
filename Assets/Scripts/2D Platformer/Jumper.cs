@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class Jumper : MonoBehaviour
 {
     [SerializeField] private LayerMask _ground;
@@ -13,7 +12,8 @@ public class Jumper : MonoBehaviour
 
     private void Start()
     {
-        Rigidbody = GetComponent<Rigidbody2D>();
+        if (gameObject.TryGetComponent(out Rigidbody2D rigidbody))
+            Rigidbody = rigidbody;
     }
 
     public bool Jump(bool isJump)

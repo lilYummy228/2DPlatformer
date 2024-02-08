@@ -8,7 +8,7 @@ public class Attacker : MonoBehaviour
 
     private float _attackRate = .5f;
     private float _nextAttackTime = 0f;
-    private bool _isAttack;  
+    private bool _isAttack;
 
     private void OnDrawGizmosSelected()
     {
@@ -44,7 +44,7 @@ public class Attacker : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _enemyLayer);
 
         foreach (Collider2D collider in hitEnemies)
-            if (collider.TryGetComponent(out Enemy enemy))
-                enemy.TakeHit();
+            if (collider.TryGetComponent(out Enemy enemy) && gameObject.TryGetComponent(out Player player))
+                enemy.TakeHit(player.Damage);
     }
 }

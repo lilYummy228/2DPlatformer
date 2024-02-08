@@ -186,7 +186,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ff07ebb5c64bdce4ca79cc33dac7aedb, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -265,7 +265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b91a5acc90214429cb55d4b5294720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
+  _health: 60
+  _damage: 20
 --- !u!114 &5113389151627314697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6746818b1c4091438de61c0ea13965c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blinkMaterial: {fileID: 2100000, guid: d960070712cfc5b409dcf502f8402916, type: 2}
+  _hurtBlinkMaterial: {fileID: 2100000, guid: d960070712cfc5b409dcf502f8402916, type: 2}
+  _healBlinkMaterial: {fileID: 2100000, guid: cd5ebdb1aaa18e24aa8248ef9484ab2d, type: 2}
 --- !u!114 &-8768480168277442114
 MonoBehaviour:
   m_ObjectHideFlags: 0

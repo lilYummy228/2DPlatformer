@@ -24,7 +24,7 @@ public class SpawnPoint : MonoBehaviour
 
     public void TrySpawn()
     {
-        if (_object != null && _randomValue < _chanceToSpawn)
+        if (_object != null && _randomValue < _chanceToSpawn && _object.TryGetComponent(out Player player) == false)
             Instantiate(_object, _position, _rotation);
     }
 }

@@ -10,14 +10,15 @@ public class Enemy : MonoBehaviour
     private readonly int VelocityX = Animator.StringToHash(nameof(VelocityX));
     private readonly int IsAttack = Animator.StringToHash(nameof(IsAttack));
 
-    [SerializeField] private int _health = 3;
+    [SerializeField] private int _health = 60;
+    [SerializeField] private int _damage = 20;
 
     private EnemyDetector _playerDetector;
     private WaitForSeconds _wait;
     private WaitForSecondsRealtime _stun;
     private Mover _mover;
     private AnimationController _animationController;
-    private DamageController _damageManagement;
+    private DamageController _damageController;
     private Coroutine _hitCoroutine;
     private float _moveDirection = 1f;
     private float _waitingTime = 2f;
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour
         _stun = new WaitForSecondsRealtime(_stunningTime);
         _mover = GetComponent<Mover>();
         _animationController = GetComponent<AnimationController>();
-        _damageManagement = GetComponent<DamageController>();
+        _damageController = GetComponent<DamageController>();
         _playerDetector = GetComponent<EnemyDetector>();
     }
 
@@ -53,9 +54,9 @@ public class Enemy : MonoBehaviour
         _animationController.SetVelocityX(VelocityX, _mover.Move(_moveDirection));
     }
 
-    public void TakeHit()
+    public void TakeHit(int damage)
     {
-        _health = _damageManagement.TakeDamage(_health);
+        _health = _damageController.TakeDamage(_health, damage);
 
         StartCoroutine(nameof(Stun));
     }
@@ -86,7 +87,7 @@ public class Enemy : MonoBehaviour
         {
             _animationController.SetAttackState(IsAttack, true);
 
-            player.TakeHit();
+            player.TakeHit(_damage);
 
             yield return _stun;
 
